@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ImportUser = () => {
+const ImportUser = ({iconName}) => {
   return (
     <View>
       <View
@@ -13,7 +13,7 @@ const ImportUser = () => {
           backgroundColor: 'green',
         }}>
         <MaterialCommunityIcons
-          name="chat-plus-outline"
+          name={iconName}
           size={35}
           color={'white'}
         />

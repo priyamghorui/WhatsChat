@@ -15,7 +15,7 @@ export default function Chats() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <HeadTitle title="WhatsChats" color="green" />
+            <HeadTitle title="WhatsChats" color="green"  styleVareent= "bold" />
             <View style={{flexDirection: 'row'}}>
               <QrCode />
               <Camera />
@@ -32,7 +32,7 @@ export default function Chats() {
           alignSelf: 'flex-end',
           bottom: 5,
         }}>
-        <ImportUser />
+        <ImportUser iconName="chat-plus-outline"/>
       </View>
     </View>
   );
