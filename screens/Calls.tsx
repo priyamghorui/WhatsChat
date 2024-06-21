@@ -8,15 +8,19 @@ import Settings from '../components/Universal/Settings';
 import ImportUser from '../components/Universal/ImportUser';
 import Status from '../components/Updates/Status';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import SearchLogo from '../components/Universal/SearchLogo';
-export default function Updates() {
+export default function Calls() {
   return (
     <View style={{flex: 1, justifyContent: 'space-between'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <HeadTitle title="Updates" color="black" styleVareent="normal" />
+            <HeadTitle
+              title="Calls"
+              color="black"
+              styleVareent="normal"
+            />
             <View style={{flexDirection: 'row'}}>
               <QrCode />
               <Camera />
@@ -24,36 +28,9 @@ export default function Updates() {
               <Settings />
             </View>
           </View>
-          <Text variant="titleLarge" style={{fontWeight: 'bold'}}>
-            Status
-          </Text>
-          <View style={{flexDirection: 'row'}}>
-            {/* <Status /> */}
-            <View style={{alignItems: 'center'}}>
-              <FontAwesome name="user-circle" size={59} color={'grey'} />
-              <Text>hello</Text>
-            </View>
-            <Status />
-          </View>
-        </View>
-        <View style={{borderWidth: 1}}></View>
-        <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-
-        <Text variant="titleLarge" style={{fontWeight: 'bold'}}>
-            Channels
-          </Text>
-          <MaterialCommunityIcons name="plus" size={35} color={'black'} />
         </View>
 
-        <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-
-<Text variant="titleLarge" style={{fontWeight: 'bold'}}>
-    Find channels
-  </Text>
-  <Text style={{fontWeight: 'bold',fontSize:17}}>
-    See all  >
-  </Text>
-</View>
+       
       </ScrollView>
       <View
         style={{
@@ -61,7 +38,21 @@ export default function Updates() {
           alignSelf: 'flex-end',
           bottom: 5,
         }}>
-        <ImportUser iconName="camera-outline" />
+          <View>
+      <View
+        style={{
+          borderColor: 'green',
+          borderRadius: 22,
+          borderWidth: 11,
+          backgroundColor: 'green',
+        }}>
+        <MaterialIcons
+          name={'add-call'}
+          size={35}
+          color={'white'}
+        />
+      </View>
+    </View>
       </View>
     </View>
   );

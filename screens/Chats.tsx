@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
+import {Dimensions, ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {Text} from 'react-native-paper';
 import Headsearchbar from '../components/Chats/Headsearchbar';
 import HeadTitle from '../components/Universal/HeadTitle';
@@ -9,7 +9,7 @@ import Settings from '../components/Universal/Settings';
 import ChatsContent from '../components/Chats/ChatsContent';
 import ImportUser from '../components/Universal/ImportUser';
 
-export default function Chats() {
+export default function Chats({navigation }) {
   return (
     <View style={{flex:1,justifyContent:"space-between"}}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -23,7 +23,14 @@ export default function Chats() {
             </View>
           </View>
           <Headsearchbar />
+          <TouchableOpacity onPress={()=>{
+          
+            
+navigation.navigate('IndivisualChat')
+          }}>
+
           <ChatsContent />
+          </TouchableOpacity>
         </View>
       </ScrollView>
       <View

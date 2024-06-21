@@ -24,13 +24,16 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Navegation from './Navegation';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {NavigationContainer} from '@react-navigation/native';
+import Navegation from './Navegation';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
-      <Navegation />
+      <NavigationContainer>
+        <Navegation />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }
