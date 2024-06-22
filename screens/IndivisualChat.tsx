@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
+import {
+  Dimensions,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import {
   ActivityIndicator,
   Avatar,
@@ -22,30 +28,79 @@ import CallsIcon from '../components/Universal/CallsIcon';
 import TypeMassage from '../components/Chats/IndivisualChatComponents/TypeMassage';
 import MicrophoneIcon from '../components/Chats/IndivisualChatComponents/MicrophoneIcon';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import img from '../assets/image/BackgroundimgWhatApp.jpg';
+import SentAndReciveData from '../components/Chats/IndivisualChatComponents/SentAndReciveData';
+import ForwardIcon from '../components/Chats/IndivisualChatComponents/ForwardIcon';
+
 export default function IndivisualChat({navigation}) {
+  // const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
   return (
     <View style={{flex: 1, justifyContent: 'space-between'}}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.goBack();
-              }}>
-              <MaterialCommunityIcons
-                name="arrow-left"
-                size={36}
-                color={'black'}
-              />
-            </TouchableOpacity>
-            <View style={{flexDirection: 'row'}}>
-              <Video />
-              <CallsIcon />
-              <Settings />
-            </View>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            <MaterialCommunityIcons
+              name="arrow-left"
+              size={36}
+              color={'black'}
+            />
+          </TouchableOpacity>
+          <Avatar.Image
+            size={50}
+            source={require('../assets/image/user.png')}
+          />
+          <View>
+            <Text variant="titleLarge">Title Large</Text>
+            <Text style={{color: 'grey'}}>Title Medium</Text>
           </View>
         </View>
-      </ScrollView>
+        <View style={{flexDirection: 'row'}}>
+          <Video />
+          <CallsIcon />
+          <Settings />
+        </View>
+      </View>
+      <View style={{flex: 1}}>
+        <ImageBackground
+          source={img}
+          resizeMode="cover"
+          style={{
+            height: Dimensions.get('window').height,
+            flex: 1,
+            flexDirection: 'column',
+          }}>
+          <View style={{}}>
+            <SentAndReciveData
+              side={'flex-end'}
+              data={{date: '1/2/2000', massage: 'hello1', time: '10:44'}}
+              displayViewStatus={'#6BD0FF'}
+            />
+            <SentAndReciveData
+              side={'flex-start'}
+              data={{date: '1/2/2000', massage: 'hello2', time: '10:44'}}
+              displayViewStatus={'grey'}
+            />
+            <SentAndReciveData
+              side={'flex-end'}
+              data={{date: '1/2/2000', massage: 'hello3', time: '10:44'}}
+              displayViewStatus={'#6BD0FF'}
+            />
+            <SentAndReciveData
+              side={'flex-end'}
+              data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
+              displayViewStatus={'grey'}
+            />
+             <SentAndReciveData
+              side={'flex-start'}
+              data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
+              displayViewStatus={'grey'}
+            />
+          </View>
+        </ImageBackground>
+      </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <TypeMassage />
         <MicrophoneIcon />

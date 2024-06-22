@@ -23,6 +23,7 @@ export default function Navegation() {
         headerShown: false,
       }}>
       <Stack.Screen name="NavegationTabBar" component={NavegationTabBar} />
+      
       <Stack.Screen name="IndivisualChat" component={IndivisualChat} />
     </Stack.Navigator>
   );
