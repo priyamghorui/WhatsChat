@@ -5,9 +5,9 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 const Camera = () => {
 
   return (
-    <View>
+    <View style={{marginRight:9}}>
 
-    <MaterialCommunityIcons name="camera-outline" size={36} color={'black'}/>
+    <MaterialCommunityIcons name="camera-outline" size={29} color={'black'}/>
     </View>
   );
 };

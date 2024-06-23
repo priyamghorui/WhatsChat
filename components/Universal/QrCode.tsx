@@ -6,9 +6,9 @@ const QrCode = () => {
 
   return (
     
-    <View>
+    <View style={{marginRight:20}}>
 
-    <MaterialCommunityIcons name="qrcode-scan" size={36} color={'black'}/>
+    <MaterialCommunityIcons name="qrcode-scan" size={29} color={'black'}/>
     </View>
   );
 };

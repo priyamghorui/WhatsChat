@@ -11,7 +11,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 export default function Communities() {
   return (
-    <View style={{flex: 1, justifyContent: 'space-between'}}>
+    <View style={{flex: 1, justifyContent: 'space-between',margin:10,backgroundColor:"#fff"}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

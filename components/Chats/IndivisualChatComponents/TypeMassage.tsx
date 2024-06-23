@@ -12,10 +12,10 @@ const TypeMassage = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
       <Searchbar
-        icon={() => <Entypo name="emoji-happy" size={32} color={'grey'} />}
+        icon={() => <Entypo name="emoji-happy" size={27} color={'grey'} />}
         placeholder="Massage"
         onChangeText={setSearchQuery}
-        value={searchQuery}
+        // value={searchQuery}
         style={{backgroundColor: '#fff'}}
       />
       <View
@@ -26,17 +26,26 @@ const TypeMassage = () => {
           right: 13,
         }}>
         <TouchableOpacity>
-          <MaterialIcons name="attach-file" size={29} color={'grey'} />
+          <View style={{marginRight: 9}}>
+            <MaterialIcons name="attach-file" size={26} color={'grey'} />
+          </View>
         </TouchableOpacity>
         <TouchableOpacity>
-          <MaterialIcons name="currency-rupee" size={29} color={'grey'} />
+          <View style={{marginRight: 9}}>
+            <View
+              style={{backgroundColor: 'grey', borderRadius: 55, padding: 3}}>
+              <MaterialIcons name="currency-rupee" size={20} color={'#fff'} />
+            </View>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity>
-          <MaterialCommunityIcons
-            name="camera-outline"
-            size={29}
-            color={'grey'}
-          />
+          <View style={{marginRight: 9}}>
+            <MaterialCommunityIcons
+              name="camera-outline"
+              size={26}
+              color={'grey'}
+            />
+          </View>
         </TouchableOpacity>
       </View>
     </View>

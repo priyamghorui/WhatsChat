@@ -7,7 +7,7 @@ const Settings = () => {
   return (
     <View>
 
-    <MaterialCommunityIcons name="dots-vertical" size={36} color={'black'}/>
+    <MaterialCommunityIcons name="dots-vertical" size={29} color={'black'}/>
     </View>
   );
 };

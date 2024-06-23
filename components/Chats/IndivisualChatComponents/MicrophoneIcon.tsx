@@ -11,8 +11,9 @@ const MicrophoneIcon = () => {
           borderRadius: 30,
           borderWidth: 11,
           backgroundColor: 'green',
+          marginLeft:1
         }}>
-        <MaterialIcon name="mic" size={35} color={'white'} />
+        <MaterialIcon name="mic" size={30} color={'white'} />
       </View>
     </View>
   );

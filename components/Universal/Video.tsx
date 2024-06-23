@@ -5,7 +5,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 const Video = () => {
 
   return (
-    <View>
+    <View style={{marginRight:19}}>
 
     <MaterialCommunityIcons name="video-outline" size={36} color={'black'}/>
     </View>

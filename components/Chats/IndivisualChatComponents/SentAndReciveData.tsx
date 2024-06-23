@@ -5,9 +5,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ForwardIcon from './ForwardIcon';
 
 const SentAndReciveData = ({side, data, displayViewStatus}) => (
-  <View>
+  <View >
     {side == 'flex-end' ? (
-      <View style={{alignSelf: side, flexDirection: 'row'}}>
+      <View style={{alignSelf: side, flexDirection: 'row',  marginBottom:10}}>
         <ForwardIcon />
         <Card
           style={{
@@ -17,6 +17,8 @@ const SentAndReciveData = ({side, data, displayViewStatus}) => (
             borderColor: '#D9FDD3',
             borderWidth: 3,
             borderRadius: 6,
+            backgroundColor:"#fff",
+          
           }}>
           <Card.Content>
             <Text variant="bodyMedium">{data.massage}</Text>
@@ -32,7 +34,7 @@ const SentAndReciveData = ({side, data, displayViewStatus}) => (
         </Card>
       </View>
     ) : (
-      <View style={{alignSelf: side, flexDirection: 'row'}}>
+      <View style={{alignSelf: side, flexDirection: 'row',  marginBottom:10}}>
         <Card
           style={{
             display: 'flex',
@@ -41,6 +43,7 @@ const SentAndReciveData = ({side, data, displayViewStatus}) => (
             borderColor: '#D9FDD3',
             borderWidth: 3,
             borderRadius: 6,
+            backgroundColor:"#fff"
           }}>
           <Card.Content>
             <Text variant="bodyMedium">{data.massage}</Text>

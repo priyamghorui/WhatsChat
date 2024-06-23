@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {Dimensions, ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  Dimensions,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Text} from 'react-native-paper';
 import Headsearchbar from '../components/Chats/Headsearchbar';
 import HeadTitle from '../components/Universal/HeadTitle';
@@ -9,13 +15,14 @@ import Settings from '../components/Universal/Settings';
 import ChatsContent from '../components/Chats/ChatsContent';
 import ImportUser from '../components/Universal/ImportUser';
 
-export default function Chats({navigation }) {
+export default function Chats({navigation}) {
   return (
-    <View style={{flex:1,justifyContent:"space-between"}}>
+
+    <View style={{flex: 1, justifyContent: 'space-between',margin:10,backgroundColor:"#fff"}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <HeadTitle title="WhatsChats" color="green"  styleVareent= "bold" />
+          <View style={{flexDirection: 'row', justifyContent: 'space-between',marginBottom:18}}>
+            <HeadTitle title="WhatsChats" color="green" styleVareent="bold" />
             <View style={{flexDirection: 'row'}}>
               <QrCode />
               <Camera />
@@ -23,13 +30,11 @@ export default function Chats({navigation }) {
             </View>
           </View>
           <Headsearchbar />
-          <TouchableOpacity onPress={()=>{
-          
-            
-navigation.navigate('IndivisualChat')
-          }}>
-
-          <ChatsContent />
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('IndivisualChat');
+            }}>
+            <ChatsContent />
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -37,11 +42,12 @@ navigation.navigate('IndivisualChat')
         style={{
           position: 'absolute',
           alignSelf: 'flex-end',
-          bottom: 5,
+          bottom: 25,
         }}>
-        <ImportUser iconName="chat-plus-outline"/>
+        <ImportUser iconName="chat-plus-outline" />
       </View>
     </View>
+
   );
 }
 

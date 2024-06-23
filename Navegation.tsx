@@ -36,8 +36,11 @@ function NavegationTabBar() {
         headerShown: false,
         tabBarActiveTintColor: 'green',
         tabBarInactiveTintColor: 'black',
-        tabBarLabelStyle: {fontSize: 15},
+        tabBarLabelStyle: {fontSize: 15,bottom:15},
+        tabBarStyle:{backgroundColor:"#fff",height:80,marginTop:-20},
+        tabBarBadgeStyle:{backgroundColor:"green",borderRadius:9,width:30,height:19 ,fontSize:14}
       }}>
+
       <Tab.Screen
         name="Chats"
         component={Chats}
@@ -47,23 +50,26 @@ function NavegationTabBar() {
             return (
               <MaterialIcon
                 name="mark-unread-chat-alt"
-                size={size}
+                size={30}
                 color={color}
-              />
-            );
-          },
-          // tabBarBadge: 3,
-        }}
-      />
+                />
+              );
+            },
+            tabBarBadge: 3,
+          }}
+          />
 
       <Tab.Screen
         name="Updates"
         component={Updates}
         options={{
+          tabBarBadgeStyle:{backgroundColor:"green",borderRadius:9},
           tabBarLabel: 'Updates',
           tabBarIcon: ({color, size}) => {
-            return <Ionicons name="at-circle" size={size} color={color} />;
+            return <Ionicons name="at-circle" size={30} color={color} />;
           },
+          tabBarBadge: '',
+
         }}
       />
       <Tab.Screen
@@ -72,7 +78,7 @@ function NavegationTabBar() {
         options={{
           tabBarLabel: 'Communities',
           tabBarIcon: ({color, size}) => {
-            return <FontAwesome name="users" size={size} color={color} />;
+            return <FontAwesome name="users" size={30} color={color} />;
           },
         }}
       />
@@ -82,7 +88,7 @@ function NavegationTabBar() {
         options={{
           tabBarLabel: 'Calls',
           tabBarIcon: ({color, size}) => (
-            <MaterialIcon name="call" size={size} color={color} />
+            <MaterialIcon name="call" size={30} color={color} />
           ),
         }}
       />

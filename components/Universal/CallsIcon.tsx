@@ -5,7 +5,7 @@ import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 const CallsIcon = () => {
 
   return (
-    <View>
+    <View style={{marginRight:9}}>
 
     <MaterialIcon name="call" size={36} color={'black'}/>
     </View>

@@ -35,8 +35,8 @@ import ForwardIcon from '../components/Chats/IndivisualChatComponents/ForwardIco
 export default function IndivisualChat({navigation}) {
   // const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
   return (
-    <View style={{flex: 1, justifyContent: 'space-between'}}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+    <View style={{flex: 1, justifyContent: 'space-between',backgroundColor:"#fff"}}>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between',alignItems:"center",padding:8}}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TouchableOpacity
             onPress={() => {
@@ -72,7 +72,7 @@ export default function IndivisualChat({navigation}) {
             flex: 1,
             flexDirection: 'column',
           }}>
-          <View style={{}}>
+          <View style={{margin:16}}>
             <SentAndReciveData
               side={'flex-end'}
               data={{date: '1/2/2000', massage: 'hello1', time: '10:44'}}
@@ -98,10 +98,15 @@ export default function IndivisualChat({navigation}) {
               data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
               displayViewStatus={'grey'}
             />
+             <SentAndReciveData
+              side={'flex-start'}
+              data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
+              displayViewStatus={'grey'}
+            />
           </View>
         </ImageBackground>
       </View>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between',padding:5}}>
         <TypeMassage />
         <MicrophoneIcon />
       </View>

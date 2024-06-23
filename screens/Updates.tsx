@@ -8,11 +8,11 @@ import Settings from '../components/Universal/Settings';
 import ImportUser from '../components/Universal/ImportUser';
 import Status from '../components/Updates/Status';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchLogo from '../components/Universal/SearchLogo';
 export default function Updates() {
   return (
-    <View style={{flex: 1, justifyContent: 'space-between'}}>
+    <View style={{flex: 1, justifyContent: 'space-between',margin:10,backgroundColor:"#fff"}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -20,7 +20,7 @@ export default function Updates() {
             <View style={{flexDirection: 'row'}}>
               <QrCode />
               <Camera />
-              <SearchLogo/>
+              <SearchLogo />
               <Settings />
             </View>
           </View>
@@ -36,30 +36,26 @@ export default function Updates() {
             <Status />
           </View>
         </View>
-        <View style={{borderWidth: 1}}></View>
-        <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-
-        <Text variant="titleLarge" style={{fontWeight: 'bold'}}>
+        <View style={{borderWidth: 0.25,borderColor:"grey"}}></View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text variant="titleLarge" style={{fontWeight: 'bold'}}>
             Channels
           </Text>
           <MaterialCommunityIcons name="plus" size={35} color={'black'} />
         </View>
 
-        <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-
-<Text variant="titleLarge" style={{fontWeight: 'bold'}}>
-    Find channels
-  </Text>
-  <Text style={{fontWeight: 'bold',fontSize:17}}>
-    See all  >
-  </Text>
-</View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text variant="titleLarge" style={{fontWeight: 'bold'}}>
+            Find channels
+          </Text>
+          <Text style={{fontWeight: 'bold', fontSize: 17}}>See all</Text>
+        </View>
       </ScrollView>
       <View
         style={{
           position: 'absolute',
           alignSelf: 'flex-end',
-          bottom: 5,
+          bottom: 25,
         }}>
         <ImportUser iconName="camera-outline" />
       </View>
