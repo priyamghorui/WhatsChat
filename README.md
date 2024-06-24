@@ -1,4 +1,3 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 # WhatsApp Clone
 ## About this App
 ### This is a well manage react-native app.
@@ -8,7 +7,9 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ## Use imp Components
 ### 1. Bottom tab
 ### 2. Stack Navigater
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 ## Step 1: Start the Metro Server
+
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
