@@ -5,54 +5,79 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ForwardIcon from './ForwardIcon';
 
 const SentAndReciveData = ({side, data, displayViewStatus}) => (
-  <View >
+  <View>
     {side == 'flex-end' ? (
-      <View style={{alignSelf: side, flexDirection: 'row',  marginBottom:10}}>
+      <View style={{alignSelf: side, flexDirection: 'row', marginBottom: 10}}>
         <ForwardIcon />
-        <Card
+        <View
           style={{
             display: 'flex',
             flexDirection: 'row',
             // alignSelf: side,
             borderColor: '#D9FDD3',
             borderWidth: 3,
-            borderRadius: 6,
-            backgroundColor:"#fff",
-          
+            borderRadius: 9,
+            backgroundColor: '#D9FDD3',
+            padding: 4,
           }}>
-          <Card.Content>
-            <Text variant="bodyMedium">{data.massage}</Text>
-          </Card.Content>
-          <View style={{alignSelf: 'flex-end', flexDirection: 'row'}}>
-            <Text>{data.time}</Text>
+          <View>
+            <Text
+              // variant="titleMedium"
+              style={{color: '#0B141A', fontSize: 18}}>
+              {data.massage}
+            </Text>
+          </View>
+          <View
+            style={{
+              alignSelf: 'flex-end',
+              flexDirection: 'row',
+              bottom: -8,
+              marginLeft: 8,
+            }}>
+            <Text variant="bodySmall" style={{color: '#728876', fontSize: 13}}>
+              {data.time}
+            </Text>
             <Ionicons
               name="checkmark-done"
               size={20}
               color={displayViewStatus}
             />
           </View>
-        </Card>
+        </View>
       </View>
     ) : (
-      <View style={{alignSelf: side, flexDirection: 'row',  marginBottom:10}}>
-        <Card
+      <View style={{alignSelf: side, flexDirection: 'row', marginBottom: 10}}>
+        <View
           style={{
             display: 'flex',
             flexDirection: 'row',
             // alignSelf: side,
-            borderColor: '#D9FDD3',
+            borderColor: '#fff',
             borderWidth: 3,
-            borderRadius: 6,
-            backgroundColor:"#fff"
+            borderRadius: 9,
+            backgroundColor: '#fff',
+            padding: 4,
           }}>
-          <Card.Content>
-            <Text variant="bodyMedium">{data.massage}</Text>
-          </Card.Content>
-
-          <View style={{alignSelf: 'flex-end', flexDirection: 'row'}}>
-            <Text>{data.time}</Text>
+          <View>
+            <Text
+              // variant="titleMedium"
+              style={{color: '#0B141A', fontSize: 18}}>
+              {data.massage}
+            </Text>
           </View>
-        </Card>
+
+          <View
+            style={{
+              alignSelf: 'flex-end',
+              flexDirection: 'row',
+              bottom: -8,
+              marginLeft: 8,
+            }}>
+            <Text variant="bodySmall" style={{color: '#728876', fontSize: 13}}>
+              {data.time}
+            </Text>
+          </View>
+        </View>
         <ForwardIcon />
       </View>
     )}

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+
 import {
   ActivityIndicator,
   Avatar,
@@ -31,12 +32,35 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import img from '../assets/image/BackgroundimgWhatApp.jpg';
 import SentAndReciveData from '../components/Chats/IndivisualChatComponents/SentAndReciveData';
 import ForwardIcon from '../components/Chats/IndivisualChatComponents/ForwardIcon';
+import {useDispatch, useSelector} from 'react-redux';
+import {sendChat} from '../redux/action/action';
+import SentIcon from '../components/Chats/IndivisualChatComponents/SentIcon';
 
 export default function IndivisualChat({navigation}) {
+  const dispatch = useDispatch();
+  const reduxSentChat = useSelector(state => state.sendchatreducer);
+  const [receivedData, setReceivedData] = React.useState('');
+  const onDataReceived = data => {
+    setReceivedData(data);
+  };
+  React.useEffect(() => {
+    setReceivedData('');
+  }, [reduxSentChat]);
   // const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
   return (
-    <View style={{flex: 1, justifyContent: 'space-between',backgroundColor:"#fff"}}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between',alignItems:"center",padding:8}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'space-between',
+        backgroundColor: '#fff',
+      }}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: 8,
+        }}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TouchableOpacity
             onPress={() => {
@@ -72,43 +96,69 @@ export default function IndivisualChat({navigation}) {
             flex: 1,
             flexDirection: 'column',
           }}>
-          <View style={{margin:16}}>
-            <SentAndReciveData
-              side={'flex-end'}
-              data={{date: '1/2/2000', massage: 'hello1', time: '10:44'}}
-              displayViewStatus={'#6BD0FF'}
-            />
-            <SentAndReciveData
-              side={'flex-start'}
-              data={{date: '1/2/2000', massage: 'hello2', time: '10:44'}}
-              displayViewStatus={'grey'}
-            />
-            <SentAndReciveData
-              side={'flex-end'}
-              data={{date: '1/2/2000', massage: 'hello3', time: '10:44'}}
-              displayViewStatus={'#6BD0FF'}
-            />
-            <SentAndReciveData
-              side={'flex-end'}
-              data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
-              displayViewStatus={'grey'}
-            />
-             <SentAndReciveData
-              side={'flex-start'}
-              data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
-              displayViewStatus={'grey'}
-            />
-             <SentAndReciveData
-              side={'flex-start'}
-              data={{date: '1/2/2000', massage: 'hello', time: '10:44'}}
-              displayViewStatus={'grey'}
-            />
+          <View style={{margin: 16}}>
+            {reduxSentChat.length != 0 ? (
+              reduxSentChat.map((element, index) => (
+                <View key={index}>
+                  <SentAndReciveData
+                    side={element.orientation}
+                    data={{
+                      date: '1/2/2000',
+                      massage: element.sendChatData,
+                      time: element.time,
+                    }}
+                    // displayViewStatus={'#6BD0FF'}
+                    displayViewStatus={'grey'}
+
+                  />
+                </View>
+              ))
+            ) : (
+              <View>
+                <SentAndReciveData
+                  side={'flex-end'}
+                  data={{date: '1/2/2000', massage: 'hello1', time: '10:44'}}
+                  displayViewStatus={'#6BD0FF'}
+                />
+                <SentAndReciveData
+                  side={'flex-start'}
+                  data={{date: '1/2/2000', massage: 'hello2', time: '10:44'}}
+                  displayViewStatus={'grey'}
+                />
+              </View>
+            )}
           </View>
         </ImageBackground>
+        {/* <Text>Received data: {receivedData}</Text> */}
       </View>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between',padding:5}}>
-        <TypeMassage />
-        <MicrophoneIcon />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          padding: 5,
+        }}>
+        <TypeMassage onDataReceived={onDataReceived} />
+        {receivedData != '' ? (
+          <TouchableOpacity
+            onPress={() => {
+              // console.log(receivedData);
+              if (receivedData != '') {
+                dispatch(
+                  sendChat({
+                    sendChatData: receivedData,
+                    orientation: 'flex-end',
+                    time: new Date().toLocaleTimeString().slice(0, 5),
+                  }),
+                );
+              }
+            }}>
+            <SentIcon />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity>
+            <MicrophoneIcon />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

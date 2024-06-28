@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
-const MicrophoneIcon = () => {
+const SentIcon = () => {
   return (
     <View>
       <View
@@ -13,10 +13,10 @@ const MicrophoneIcon = () => {
           backgroundColor: 'green',
           marginLeft:1
         }}>
-        <MaterialIcon name="mic" size={28} color={'white'} />
+        <MaterialIcon name="send" size={28} color={'white'} />
       </View>
     </View>
   );
 };
 
-export default MicrophoneIcon;
+export default SentIcon;

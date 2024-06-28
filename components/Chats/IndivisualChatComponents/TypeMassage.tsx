@@ -1,21 +1,46 @@
 import * as React from 'react';
 import {View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {Icon, Searchbar} from 'react-native-paper';
+import {Icon, Searchbar, Text, TextInput} from 'react-native-paper';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {useSelector} from 'react-redux';
 
-const TypeMassage = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
+const TypeMassage = props => {
+  // const [searchQuery, setSearchQuery] = React.useState('');
+  const [sendValue, setSendValue] = React.useState('');
+  const reduxSentChat = useSelector(state => state.sendchatreducer);
+  React.useEffect(() => {
+    setSendValue('');
+  }, [reduxSentChat]);
 
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
-      <Searchbar
+      {/* <Searchbar
+     
         icon={() => <Entypo name="emoji-happy" size={27} color={'grey'} />}
         placeholder="Massage"
-        onChangeText={setSearchQuery}
-        // value={searchQuery}
+        onChangeText={e => {
+          // setSearchQuery(e)
+          setSendValue(e);
+          props.onDataReceived(e);
+        }}
+        value={sendValue}
+        style={{backgroundColor: '#fff'}}
+      /> */}
+      <TextInput
+        mode="outlined"
+        outlineColor="#fff"
+        activeOutlineColor="#fff"
+        outlineStyle={{borderRadius: 45}}
+        placeholder="Massage"
+        onChangeText={e => {
+          // setSearchQuery(e)
+          setSendValue(e);
+          props.onDataReceived(e);
+        }}
+        value={sendValue}
         style={{backgroundColor: '#fff'}}
       />
       <View
@@ -51,5 +76,4 @@ const TypeMassage = () => {
     </View>
   );
 };
-
 export default TypeMassage;

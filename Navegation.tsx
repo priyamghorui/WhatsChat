@@ -13,19 +13,25 @@ import Communities from './screens/Communities';
 import Calls from './screens/Calls';
 import IndivisualChat from './screens/IndivisualChat';
 import {createStackNavigator} from '@react-navigation/stack';
+import { Provider } from 'react-redux';
+import store from './redux/store/store';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default function Navegation() {
   return (
+    <Provider store={store}>
+      
     <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
+    screenOptions={{
+      headerShown: false,
+      
+    }}>
       <Stack.Screen name="NavegationTabBar" component={NavegationTabBar} />
       
       <Stack.Screen name="IndivisualChat" component={IndivisualChat} />
     </Stack.Navigator>
+        </Provider>
   );
 }
 
