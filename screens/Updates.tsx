@@ -12,7 +12,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import SearchLogo from '../components/Universal/SearchLogo';
 export default function Updates() {
   return (
-    <View style={{flex: 1, justifyContent: 'space-between',margin:10,backgroundColor:"#fff"}}>
+    <View style={{flex: 1, justifyContent: 'space-between',padding:10,backgroundColor:"#fff"}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

@@ -12,7 +12,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import SearchLogo from '../components/Universal/SearchLogo';
 export default function Calls() {
   return (
-    <View style={{flex: 1, justifyContent: 'space-between',margin:10,backgroundColor:"#fff"}}>
+    <View style={{flex: 1, justifyContent: 'space-between',padding:10,backgroundColor:"#fff"}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -45,6 +45,7 @@ export default function Calls() {
           borderRadius: 22,
           borderWidth: 11,
           backgroundColor: 'green',
+          margin:10
         }}>
         <MaterialIcons
           name={'add-call'}

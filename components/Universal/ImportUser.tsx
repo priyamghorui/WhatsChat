@@ -11,6 +11,7 @@ const ImportUser = ({iconName}) => {
           borderRadius: 22,
           borderWidth: 11,
           backgroundColor: 'green',
+          margin:10
         }}>
         <MaterialCommunityIcons
           name={iconName}
